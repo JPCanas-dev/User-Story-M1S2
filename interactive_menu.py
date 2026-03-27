@@ -21,7 +21,10 @@ def menu(inventory):
             print(success_add)
 
         elif option == "2":
-            show_inventory(inventory)
+            if not inventory:
+                print("INVENTORY IS EMPTY!")
+            else:
+                show_inventory(inventory)
 
         elif option == "3":
             if not inventory:
