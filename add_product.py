@@ -40,17 +40,15 @@ def new_product (inventory):
 
         if not quantity:
             print("\nEmpty quantity! Please enter a number")
-
-        elif quantity.isdigit():
-
-            quantity = int(quantity)
-            if quantity <= 0:
-                print("\nPlease enter a positive number!")
-            else:
-                correct_quantity = 1
-
         else:
-            print("\nPlease enter only integers!")
+            try:
+                quantity = int(quantity)
+                if quantity <= 0:
+                    print("Quantity must be greater than 0!")
+                else:
+                    correct_quantity = 1
+            except:
+                print("\nPlease enter only integers!")
 
     product_added = {
         "name" : name,
@@ -61,29 +59,3 @@ def new_product (inventory):
     inventory.append(product_added)
 
     return"\nPRODUCT ADDED!"
-
-# isdigit() → valida si el string tiene solo números
-# Para posteriormente hacer la conversion
-
-# Limitación importante
-# isdigit() es bastante estricto:
-# Solo acepta dígitos puros (0–9)
-# No acepta:
-# negativos (-5)
-# decimales (3.14)
-# espacios
-
-# NO lo uses cuando:
-# Hay decimales
-# Hay negativos
-
-# Idea mental clave
-# isdigit() = filtro simple
-# try/except = validación real
-
-# El float de price = float(price) es porque:
-# float ("") es ValueError, por eso siempre me mandaba alla,
-# por tal razon, tuve que crear el try-except asi por aparte,
-# el price = float(input("Enter price: ")) y el
-# if not price los tenia dentro del try, los tuve que sacar y
-# separar el float con price = float(price)
