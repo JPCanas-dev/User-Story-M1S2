@@ -1,5 +1,5 @@
 
-def calculations(inventory):
+def statistics(inventory):
 
     # Initialize variables to store totals
     total_revenue = 0

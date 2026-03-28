@@ -1,7 +1,7 @@
 # Import functions from other modules
 from add_product import new_product
 from display_inventory import show_inventory
-from display_statistics import calculations
+from display_statistics import statistics
 
 def menu(inventory):
 
@@ -41,7 +41,7 @@ def menu(inventory):
                 print("INVENTORY IS EMPTY!")
             else:
                 # Call function to calculate totals
-                total_revenue, total_product = calculations(inventory)
+                total_revenue, total_product = statistics(inventory)
 
                 # Display formatted results
                 print(f"Total revenue: $ {total_revenue:,}")

@@ -19,3 +19,6 @@ if __name__ == "__main__":
 
     # Print the message returned when the user exits the menu
     print(end_message)
+
+# This project demonstrates basic inventory management using Python,
+# including input validation, functions, and modular programming.
